@@ -3,5 +3,11 @@
 <div class="card">
     <p><%=@article.content%></p>
 </div>
+<%=link_to "Edit Article", edit_path,  class: "btn btn-secondary"%>
 
 <%=link_to "Back To Articles", articles_path,  class: "btn btn-secondary"%>
+
+<%= link_to "Delete",
+    article_path(@article),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%>

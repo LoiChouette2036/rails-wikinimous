@@ -9,5 +9,15 @@ Rails.application.routes.draw do
   # root "posts#index"
   get"articles", to: "articles#index", as: :articles
 
+  get "articles/new", to: "articles#new", as: :create
+
   get "articles/:id", to: "articles#show", as: :article
+
+  post "articles", to: "articles#create"
+
+  get "articles/:id/edit", to: "articles#edit", as: :edit
+
+  patch "articles/:id", to: "articles#update"
+
+  delete "articles/:id", to: "articles#destroy"
 end
